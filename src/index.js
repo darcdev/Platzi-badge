@@ -5,4 +5,13 @@ import Badge from "./components/Badges";
 import "bootstrap/dist/css/bootstrap.css";
 import "./global.css";
 
-ReactDOM.render(<Badge />, document.getElementById("app"));
+ReactDOM.render(
+  <Badge
+    firstname="diego"
+    lastname="rojas"
+    avatarUrl="https://secure.gravatar.com/avatar/2de01bb76406913e614db40e7e39ab03"
+    description="frontend"
+    twitter="@darcdev"
+  />,
+  document.getElementById("app")
+);
