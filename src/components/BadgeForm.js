@@ -1,20 +1,12 @@
 import React, {Component} from "react";
 
 export class BadgeForm extends Component {
-  handleClick(e) {
-    console.log(this.handleChange);
-  }
-  handleSubmit(e) {
-    e.preventDefault();
-    console.log("Form was submitted");
-  }
-
   render() {
     return (
       <div>
         <h1>New Attendant</h1>
 
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        <form onSubmit={this.props.onSubmit}>
           <div className="form-group">
             <label>First Name</label>
             <input
@@ -70,7 +62,7 @@ export class BadgeForm extends Component {
           </div>
 
           <button
-            onClick={this.handleClick.bind(this)}
+            // onClick={this.handleClick.bind(this)}
             className="btn btn-primary"
           >
             Save
