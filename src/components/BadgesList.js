@@ -26,6 +26,9 @@ class BadgesListItem extends Component {
 }
 class BadgesList extends Component {
   render() {
+    if (this.props.badges.length === 0) {
+      return "Loading...";
+    }
     return (
       <div className="BadgesList">
         <ul className="list-unstyled">
