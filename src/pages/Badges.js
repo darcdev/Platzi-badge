@@ -7,7 +7,8 @@ import confLogo from "../images/badge-header.svg";
 import BadgesList from "../components/BadgesList";
 
 import api from "../api";
-
+import PageLoading from "../components/PageLoading";
+import PageError from "../components/PageError";
 class Badges extends Component {
   state = {
     loading: true,
@@ -34,17 +35,17 @@ class Badges extends Component {
     } catch (error) {
       this.setState({
         loading: false,
-        error,
+        error: error,
       });
     }
   };
 
   render() {
     if (this.state.loading === true) {
-      return "Loading...";
+      return <PageLoading />;
     }
-    if (this.state.error === true) {
-      return `Error : ${this.state.error.message}`;
+    if (this.state.error) {
+      return <PageError error={this.state.error} />;
     }
     return (
       <div>
