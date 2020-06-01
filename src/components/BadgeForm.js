@@ -67,6 +67,10 @@ export class BadgeForm extends Component {
           >
             Save
           </button>
+
+          {this.props.error && (
+            <p class="text-danger">{this.props.error.message}</p>
+          )}
         </form>
       </div>
     );
